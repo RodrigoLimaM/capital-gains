@@ -46,7 +46,7 @@ java -jar .\build\libs\capital-gains-1.0.jar
 * 9 - Serviço responsável pelas operações matemáticas necessárias para calcular os impostos;
 * 10 - Objeto de domínio que contém as informações necessárias para o calculo de impostos relacionado a uma lista de operacoes;
 * 11 - Objeto de domínio que representa uma operação de compra ou venda e suas informações;
-* 12 - Objeto de domínio que representa o imposto relacionado a uma operação de compra ou venda;
+* 12 - Objeto de domínio que representa o imposto relacionado a uma operação de compra ou venda.
 
 Em resumo, o projeto utiliza objetos de domínio para encapsular informações sobre as operações, adota o padrão de projeto Strategy para lidar com o cálculo de impostos e mantém uma arquitetura modular para facilitar a expansão e manutenção do código.
 
