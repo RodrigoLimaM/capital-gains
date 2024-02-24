@@ -25,7 +25,7 @@ Primeiro gere o arquivo jar:
 ```
 Depois execute-o:
 ```
-java -jar .\build\libs\capital-gains-1.0.jar
+java -jar ./build/libs/capital-gains-1.0.jar
 ```
 
 ## Execução de testes
