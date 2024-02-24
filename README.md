@@ -1,5 +1,22 @@
 # Capital Gains
 
+## Introdução
+O objetivo deste projeto é implementar um programa de linha de comando (CLI) que calcula o imposto a ser pago sobre lucros ou prejuízos de operações no mercado financeiro de ações.
+
+Exemplo de entrada:
+```json lines
+[{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"sell", "unit-cost":20.00, "quantity": 5000}]
+[{"operation":"buy", "unit-cost":20.00, "quantity": 10000},{"operation":"sell", "unit-cost":10.00, "quantity": 5000}]
+
+```
+OBS:A última linha da entrada será uma linha vazia.
+
+Exemplo de saída:
+```json lines
+[{"tax":0}, {"tax":10000}]
+[{"tax":0}, {"tax":0}]
+```
+
 ## Execução do projeto
 
 Primeiro gere o arquivo jar:
