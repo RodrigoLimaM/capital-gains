@@ -181,4 +181,20 @@ class CapitalGainsControllerIntegrationTest {
 
         assertEquals(expected, byteArrayOutputStream.toString().trim());
     }
+
+    @Test
+    void shouldFinishExecution_whenInputIsNull() throws IOException {
+        final var expected = "[{\"tax\":0.00},{\"tax\":80000.00},{\"tax\":0.00},{\"tax\":60000.00}]";
+
+        Mockito.when(bufferedReader.readLine())
+                .thenReturn("[{\"operation\":\"buy\", \"unit-cost\":10.00, \"quantity\": 10000}," +
+                        "{\"operation\":\"sell\", \"unit-cost\":50.00, \"quantity\": 10000}," +
+                        "{\"operation\":\"buy\", \"unit-cost\":20.00, \"quantity\": 10000}," +
+                        "{\"operation\":\"sell\", \"unit-cost\":50.00, \"quantity\": 10000}]")
+                .thenReturn(null);
+
+        capitalGainsController.calculateTaxes();
+
+        assertEquals(expected, byteArrayOutputStream.toString().trim());
+    }
 }

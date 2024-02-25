@@ -40,10 +40,14 @@ public class CapitalGainsController {
         String input;
         do {
             input = getBufferedReader().readLine();
-            if (!input.isEmpty()) {
+            if (isNotEndOfFile(input)) {
                 operationInfos.add(JsonParser.parseInput(input));
             }
-        } while (!input.isEmpty());
+        } while (isNotEndOfFile(input));
         return operationInfos;
+    }
+
+    private static boolean isNotEndOfFile(String input) {
+        return input != null && !input.isEmpty();
     }
 }

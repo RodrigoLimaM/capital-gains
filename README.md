@@ -9,7 +9,7 @@ Exemplo de entrada:
 [{"operation":"buy", "unit-cost":20.00, "quantity": 10000},{"operation":"sell", "unit-cost":10.00, "quantity": 5000}]
 
 ```
-OBS:A última linha da entrada será uma linha vazia.
+*OBS:A última linha da entrada será uma linha vazia.*
 
 Exemplo de saída:
 ```json lines
@@ -26,6 +26,10 @@ Primeiro gere o arquivo jar:
 Depois execute-o:
 ```
 java -jar ./build/libs/capital-gains-1.0.jar
+```
+*OBS: Você pode realizar o input digitando uma entrada manual ou utilizando Input Redirection para submeter um arquivo de texto, exemplo:*
+```
+java -jar ./build/libs/capital-gains-1.0.jar < seuarquivo.txt
 ```
 
 ## Execução de testes
