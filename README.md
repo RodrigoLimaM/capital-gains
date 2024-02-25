@@ -38,7 +38,7 @@ java -jar ./build/libs/capital-gains-1.0.jar < seuarquivo.txt
 ```
 
 ## Desenho da solução
-![capital-gains fluxo](https://github.com/RodrigoLimaM/weather-api/assets/51386403/9a503e6c-8ca8-43cd-87f7-84fb3a5f225a)
+![capital-gains fluxo](https://i.ibb.co/bvBX14v/capital-gains-fluxo.png)
 * 1 - Controller que recebe as operações e conversa com a porta de entrada;
 * 2 - Parser responsável pela serialização e deserialização entre JSON's e objetos Java;
 * 3 - Interface responsável pelo contrato relacionado ao calculo de impostos;
