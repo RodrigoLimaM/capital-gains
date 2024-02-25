@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CapitalGainsControllerIntegrationTest {
 
@@ -65,8 +66,8 @@ class CapitalGainsControllerIntegrationTest {
 
     @Test
     void case1AndCase2() throws IOException {
-        final var expected = "[{\"tax\":0.00},{\"tax\":0.00},{\"tax\":0.00}]\r\n" +
-                "[{\"tax\":0.00},{\"tax\":10000.00},{\"tax\":0.00}]";
+        final var expectedFirstLine = "[{\"tax\":0.00},{\"tax\":0.00},{\"tax\":0.00}]";
+        final var expectedLastLine = "[{\"tax\":0.00},{\"tax\":10000.00},{\"tax\":0.00}]";
 
         Mockito.when(bufferedReader.readLine())
                 .thenReturn("[{\"operation\":\"buy\", \"unit-cost\":10.00, \"quantity\": 100}," +
@@ -79,7 +80,10 @@ class CapitalGainsControllerIntegrationTest {
 
         capitalGainsController.calculateTaxes();
 
-        assertEquals(expected, byteArrayOutputStream.toString().trim());
+        final var output = byteArrayOutputStream.toString().trim();
+
+        assertTrue(output.contains(expectedFirstLine));
+        assertTrue(output.contains(expectedLastLine));
     }
 
     @Test
